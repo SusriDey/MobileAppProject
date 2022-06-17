@@ -1,47 +1,38 @@
 [
     {
         "id": 1,
-        "firstName": "Emmanuel",
-        "lastName": "Henri",
-        "phone": "555-555-2342",
-        "company": "Marketing",
-        "project": "CRM project",
-        "notes": "This is a note"
+        "firstName": "John",
+        "lastName": "Smith",
+        "phone": "02 9988 2211",
+        "company": "Goldshine Pty Ltd",
+        "street": "1 Code Lane",
+        "city": "Javaville",
+        "state": "NSW",
+        "zip": "0100",
+        "country": "Australia"
     },
     {
         "id": 2,
-        "firstName": "Manny",
-        "lastName": "Henri",
-        "phone": "555-555-2342",
-        "company": "Marketing",
-        "project": "CRM project",
-        "notes": "This is a note"
+        "firstName": "Sue",
+        "lastName": "White",
+        "phone": "03 8899 2255",
+        "company": "Goldshine Pty Ltd",
+        "street": "16 Bit Way",
+        "city": "Byte Cove",
+        "state": "QLD",
+        "zip": "1101",
+        "country": "Australia"
     },
     {
         "id": 3,
-        "firstName": "John",
-        "lastName": "Henri",
-        "phone": "555-555-2342",
-        "company": "HR",
-        "project": "CRM project",
-        "notes": "This is a note"
-    },
-    {
-        "id": 4,
-        "firstName": "Kim",
-        "lastName": "Henri",
-        "phone": "555-555-2342",
-        "company": "General",
-        "project": "CRM project",
-        "notes": "This is a note"
-    },
-    {
-        "id": 5,
-        "firstName": "Sritama",
-        "lastName": "Dey",
-        "phone": "444-555-2342",
-        "company": "TAFE",
-        "project": "Certificate 4",
-        "notes": "I need to finish this project"
+        "firstName": "Bob",
+        "lastName": "OBits",
+        "phone": "05 7788 2255",
+        "company": "Orbit IT",
+        "street": "8 Silicon Road",
+        "city": "Cloud Hills",
+        "state": "VIC",
+        "zip": "1001",
+        "country": "Australia"
     }
 ]

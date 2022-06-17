@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
 
             state.people = [
                 ...state.people.map(p => {
-                    if(p.id === action.person.id) {
+                    if (p.id === action.person.id) {
                         return action.person
                     }
                     return p
@@ -61,7 +61,7 @@ export default (state = initialState, action) => {
                 detailView: false,
                 toUpdate: false,
                 personSelected: null
-            }            
+            }
         case 'DELETE_PERSON':
             state.people = state.people.filter(p => p.id !== state.personSelected.id)
             return {
@@ -69,7 +69,7 @@ export default (state = initialState, action) => {
                 detailView: false,
                 toUpdate: false,
                 personSelected: null
-            }        
+            }
         default:
             return state;
     }

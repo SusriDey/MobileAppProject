@@ -1,11 +1,14 @@
 import React from 'react';
+
 import { Text, View, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native';
+
 import { connect } from 'react-redux';
-import { getTheme } from 'react-native-material-kit';
+
 import Icon from 'react-native-vector-icons/EvilIcons';
+
 import * as actions from '../actions';
 
-const theme = getTheme();
+import { Card, Title, Paragraph, Avatar, IconButton } from 'react-native-paper';
 
 const styles = StyleSheet.create({
     card: {
@@ -20,7 +23,7 @@ const styles = StyleSheet.create({
         height: 100,
     },
     action: {
-        backgroundColor: 'black',
+        backgroundColor: '#262626',
         color: 'white',
     },
     icon: {
@@ -31,26 +34,50 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,0)',
     },
 });
+ 
 
 const PeopleItem = (props) => {
+
+   
+
+    const {firstName, lastName, company} = props.people
+
+ 
+
+    const getAvatarLabel = (firstName, lastName) => {
+
+ 
+
+        return `${firstName[0]}${lastName[0]}`.toUpperCase()
+
+    }
+
+ 
+
     return (
-        <TouchableWithoutFeedback 
+
+        <TouchableWithoutFeedback
+
             onPress={() => props.selectPerson(props.people)}>
-        <View style={[theme.cardStyle, styles.card]}>
-            <Image 
-                source={require('../images/background.jpg')}
-                style={[theme.cardImageStyle, styles.image]}
-            />
-            <Icon 
-                name={'user'}
-                size={100}
-                style={styles.icon}
-            />
-            <Text style={[theme.cardTitleStyle, styles.title]}>{props.people.firstName} {props.people.lastName}</Text>
-            <Text style={[theme.cardActionStyle, styles.action]}>{props.people.company}</Text>
-        </View>
+
+            <View>
+
+                <Card.Title
+
+                    title={`${firstName} ${lastName}`}
+
+                    subtitle={`${company}`}
+
+                    left={(props) => <Avatar.Text style={{backgroundColor: '#c64c38', Color: '#fff'}} size={24} {...props} label={getAvatarLabel(firstName, lastName)} />}
+
+                />
+
+            </View>
+
         </TouchableWithoutFeedback>
+
     )
+
 }
 
-export default connect(null, actions)(PeopleItem);
+ export default connect(null, actions)(PeopleItem);

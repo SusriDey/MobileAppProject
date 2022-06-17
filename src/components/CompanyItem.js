@@ -1,9 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
-import { getTheme } from 'react-native-material-kit';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
-const theme = getTheme();
+import { Card, Title, Paragraph, Avatar } from 'react-native-paper';
 
 const styles = StyleSheet.create({
     card: {
@@ -30,29 +28,34 @@ const styles = StyleSheet.create({
         color: 'white',
         backgroundColor: 'rgba(255,255,255,0)',
     },
+    companyItemContainer: {
+        margin: 10
+    },
+    employeeName: {
+        fontSize: 16,
+        margin: 2
+    }
 });
 
 const CompanyItem = (props) => {
     return (
-        <View style={[theme.cardStyle, styles.card]}>
-            <Image 
-                source={require('../images/background02.jpg')}
-                style={[theme.cardImageStyle, styles.image]}
-            />
-            <Icon 
-                name={'group'}
-                size={100}
-                style={styles.icon}
-            />
-            <Text style={[theme.cardTitleStyle, styles.title]}>{props.companies.company}</Text>
-                {props.companies.names.map((name) => {
-                    return (
-                        <Text style={[theme.cardActionStyle, styles.action]}>
-                            {name.firstName} {name.lastName}
-                        </Text>
-                    )
-                })}
-
+        <View style={styles.companyItemContainer}>
+              <Card>
+              <Card.Title
+                title={props.companies.company}
+        barStyle={{ backgroundColor: '#c64c38', Color: '#fff'}}
+                left={(props) => <Avatar.Icon {...props} color={'white'} style={{backgroundColor: '#c64c38'}} icon="group" />}
+                />                  
+                <Card.Content>
+                    {props.companies.names.map((name) => {
+                        return (
+                            <Text style={styles.employeeName}>
+                                {name.firstName} {name.lastName}
+                            </Text>
+                        )
+                    })}
+                </Card.Content>
+            </Card>
         </View>
     )
 }
